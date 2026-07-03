@@ -1,66 +1,70 @@
-# Simple Python To-Do CLI 🚀
+# Local Task Management CLI
 
-A lightweight, minimal Command Line Interface (CLI) To-Do List application built with **Python** and **Google Fire**. This application saves your tasks locally to a plain text file (`todo.txt`), meaning your entries are preserved even after you close your terminal.
+A minimalist, functional command-line interface (CLI) application designed for local task tracking. This utility abstracts terminal argument parsing using Google Fire and leverages synchronous file input/output operations to persist data locally in a plain text format.
 
-This project was built from scratch to practice functional Python programming without complex classes or boilerplates.
+The primary architectural goal of this codebase is to demonstrate functional programming practices, state persistence via file handling, and efficient collection management without relying on object-oriented structures or verbose boilerplate code.
 
 ---
 
-## ✨ Features
+## Features
 
 - **Add Tasks**: Instantly append new items to your local file.
 - **View List**: Read all active items printed sequentially.
 - **Remove Items**: Safely search for and erase a specific task by text.
 - **Persistent Storage**: Data is automatically saved locally in `todo.txt`.
 
+
 ---
 
-## 🛠️ Prerequisites
+## Prerequisites
 
-Make sure you have Python installed and the Google Fire library added to your environment:
+The application requires Python 3.x and the Google Fire library. Ensure dependencies are satisfied within your active virtual environment prior to execution:
 
 ```bash
-# Install Google Fire if you haven't already
 pip install fire
 ```
 
 ---
 
-## 🚀 How To Use
+## API Usage and Deployment
 
-Navigate to your project directory in the terminal and execute the following commands:
+Execute the application script directly from your terminal by targeting the desired operational commands. 
 
-### 1. Add a new task
+*Note: Replace `main.py` with the exact filename of your Python source code.*
+
+### 1. Append a New Task
+Appends a string argument to the end of the data file ledger.
 ```bash
-python simple_todo.py add "Buy milk"
-python simple_todo.py add "Study Python loops"
+python main.py add "Deploy database migrations"
+python main.py add "Review open pull requests"
 ```
 
-### 2. View your current list
+### 2. Retrieve All Active Tasks
+Reads and displays the current unparsed data array directly from the storage stream.
 ```bash
-python simple_todo.py list
+python main.py list
 ```
 
-### 3. Remove a completed task
+### 3. Remove a Target Task
+Locates, matches, and purges the specified string from the text record before saving the updated file state.
 ```bash
-python simple_todo.py remove "Buy milk"
+python main.py remove "Deploy database migrations"
 ```
 
 ---
 
-## 📂 File Structure
+## Project Structure
 
 ```text
-├── simple_todo.py    # Main application logic
-├── todo.txt          # Automatically generated text file holding your data
-└── README.md         # Documentation
+├── main.py        # Core application logic and execution commands
+├── todo.txt       # Automatically generated text ledger for persistent storage
+└── README.md      # Technical documentation and deployment guide
 ```
 
 ---
 
-## 🌱 Learning Milestones
+## Core Competencies Demonstrated
 
-This project was built to master the fundamentals of:
-1. **File Handling**: Opening, writing (`a` mode), reading (`r`), and overwriting (`w`) text files in Python.
-2. **CLI Automation**: Using Google Fire to instantly turn standard functions into callable terminal commands.
-3. **Array Manipulation**: Modifying raw string data inside dynamic Python lists.
+1. **Stream Execution and File Operations**: Implementing file modification modes including append (`a`), read (`r`), and write (`w`) to manipulate local project ledgers safely.
+2. **Dynamic Argument Mapping**: Streamlining developer environments by translating low-level script functions directly into clean, standardized executable workflows.
+3. **Data Integrity Management**: Managing raw list objects to evaluate and alter application datasets securely.
