@@ -3,10 +3,21 @@ import os
 
 # class ToDos:
 def add(todo):
-       
-       with open("todo.txt", "a") as file:
+
+     existing = []
+     with open ('todo.txt', 'r') as file:
+          existing = file.readlines()
+     
+      
+     
+     if (todo + "\n") in existing:
+          print("Already added")
+     else:
+           with open("todo.txt", "a") as file:
             file.write(todo + '\n')
             print(f"{todo} added  on your list")
+            
+     
 
 def list():
         with open('todo.txt', 'r') as file:
@@ -14,18 +25,16 @@ def list():
               print(todo)
 
 def remove(erase):
-    todos = []
-    with open ('todo.txt', 'r') as file:
-         todos = file.readlines()
-      
-    print(todos)
+     todo = []
+     with open ('todo.txt', 'r') as file:
+          todo = file.readlines()
+          
+     todo.remove(erase + "\n")
+     with open ('todo.txt', 'w') as file:
+          for item in todo:
+               file.write(item)
 
-    todos.remove(erase + "\n")
-    with open ('todo.txt', 'w') as file:
-         for item in todos:
-            file.write(item)
-       
-
+     print(todo)
        
     
 if __name__ == '__main__':
