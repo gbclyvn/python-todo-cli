@@ -8,11 +8,10 @@ The primary architectural goal of this codebase is to demonstrate functional pro
 
 ## Features
 
-- **Add Tasks**: Instantly append new items to your local file.
-- **View List**: Read all active items printed sequentially.
-- **Remove Items**: Safely search for and erase a specific task by text.
-- **Persistent Storage**: Data is automatically saved locally in `todo.txt`.
-
+- **Add Tasks**: Instantly append unique items to your local file while preventing duplicates.
+- **View List**: Read all active items printed sequentially as a raw array in the console.
+- **Remove Items**: Safely search for and erase a specific task by matching text strings.
+- **Persistent Storage**: Data is automatically saved locally in a plain `todo.txt` ledger.
 
 ---
 
@@ -33,7 +32,7 @@ Execute the application script directly from your terminal by targeting the desi
 *Note: Replace `main.py` with the exact filename of your Python source code.*
 
 ### 1. Append a New Task
-Appends a string argument to the end of the data file ledger.
+Appends a unique string argument to the end of the data file ledger.
 ```bash
 python main.py add "Deploy database migrations"
 python main.py add "Review open pull requests"
@@ -56,6 +55,7 @@ python main.py remove "Deploy database migrations"
 ## Project Structure
 
 ```text
+.
 ├── main.py        # Core application logic and execution commands
 ├── todo.txt       # Automatically generated text ledger for persistent storage
 └── README.md      # Technical documentation and deployment guide
